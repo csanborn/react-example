@@ -1,0 +1,20 @@
+- content_for :head_page do
+  meta(name="turbolinks-cache-control" content="no-cache")
+  = javascript_pack_tag 'bo/contract_terms'
+
+
+
+hr.uk-hr.uk-margin-remove
+
+nav.uk-navbar
+  .uk-navbar-content
+    ul.uk-navbar-nav
+      - if policy(Bo::ContractTerm).new?
+        li
+          a(href="#contract-term-new" data-uk-modal="{center: true}")
+            i.uk-icon-plus-square.uk-icon-small.uk-margin-small-right
+            | Contract Term
+
+hr.uk-hr.uk-margin-remove
+.fp-container.uk-margin-large-bottom#tables-no-more
+  #app
